@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense & Budget Visualizer</title>
+
+    <link rel="stylesheet" href="design.css">
+
+    <script src="app.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>💰 Expense & Budget Visualizer</h1>
+    </header>
+
+    <section class="balance-card">
+
+        <h2>Total Balance</h2>
+
+        <h1 id="balance">
+            Rp 0
+        </h1>
+
+    </section>
+
+    <section class="form-card">
+
+        <h2>Add Transaction</h2>
+
+        <form id="expenseForm">
+
+            <input
+                type="text"
+                id="itemName"
+                placeholder="Item Name"
+                required
+            >
+
+            <input
+                type="number"
+                id="amount"
+                placeholder="Amount"
+                required
+            >
+
+            <select id="category" required>
+
+                <option value="">
+                    Select Category
+                </option>
+
+                <option value="Food">
+                    Food
+                </option>
+
+                <option value="Transport">
+                    Transport
+                </option>
+
+                <option value="Fun">
+                    Fun
+                </option>
+
+                <option value="Custom">
+                    + Custom Category
+                </option>
+
+            </select>
+
+            <input
+                type="text"
+                id="customCategory"
+                placeholder="Enter Custom Category"
+                style="display:none;"
+            >
+
+            <button type="submit">
+                Add Transaction
+            </button>
+
+        </form>
+
+    </section>
+
+    <section class="sort-card">
+
+        <h2>Sort Transactions</h2>
+
+        <select id="sort">
+
+            <option value="newest">
+                Newest
+            </option>
+
+            <option value="oldest">
+                Oldest
+            </option>
+
+            <option value="amountAsc">
+                Amount ↑
+            </option>
+
+            <option value="amountDesc">
+                Amount ↓
+            </option>
+
+            <option value="category">
+                Category A-Z
+            </option>
+
+        </select>
+
+    </section>
+
+    <section class="transaction-card">
+
+        <h2>Transaction History</h2>
+
+        <div id="transactionList">
+
+        </div>
+
+    </section>
+
+    <section class="chart-card">
+
+        <h2>Expense Distribution</h2>
+
+        <canvas id="expenseChart">
+
+        </canvas>
+
+    </section>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
